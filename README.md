@@ -58,5 +58,3 @@ npm start
 - **Next.js 14** - React framework
 - **React 18** - UI library
 - **CSS3** - Styling with modern features
-
-
