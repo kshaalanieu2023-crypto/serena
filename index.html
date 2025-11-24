@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serena - Mental Health Support for Students</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <div class="logo">
+                <h1>Serena</h1>
+                <p class="tagline">Your mental health companion</p>
+            </div>
+            
+            <div class="welcome-content">
+                <h2>Welcome to a calmer mind</h2>
+                <p class="subtitle">Supporting students on their mental health journey</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="login-container">
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="login-btn">Sign In</button>
+                    <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Get in Touch Section -->
+        <div class="contact-section">
+            <div class="contact-content">
+                <h3>Get in Touch</h3>
+                <p>We're here to help. Reach out to us anytime.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="contactName" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" name="email" placeholder="Your email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p>Or reach us directly:</p>
+                    <p class="contact-email">support@serena.com</p>
+                    <p class="contact-phone">1-800-SERENA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
