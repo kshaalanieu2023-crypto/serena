@@ -34,9 +34,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">
+        <Link href="/dashboard" className="navbar-logo">
           <h1>Serena</h1>
-        </div>
+        </Link>
         <div className="navbar-divider navbar-divider-1"></div>
         <div className="navbar-links">
           {navItems.map((item) => {
