@@ -1021,6 +1021,8 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 48px 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .back-button {
@@ -1051,6 +1053,10 @@
   border-radius: 24px;
   padding: 48px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .article-content h1 {
@@ -1059,12 +1065,20 @@
   color: #1e293b;
   margin-bottom: 32px;
   line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .article-body {
   color: #1e293b;
   line-height: 1.8;
   font-size: 1.0625rem;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .article-body h1,
@@ -1639,21 +1653,39 @@
   .article-view {
     padding: 24px 16px;
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content {
     padding: 24px 16px;
     border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .article-content h1 {
     font-size: 1.75rem;
     margin-bottom: 24px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 
   .article-body {
     font-size: 1rem;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .article-body * {
+    max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
