@@ -159,7 +159,8 @@ export default function SerenaGPT() {
 
       const data = await response.json()
       
-      if (data.error) {
+      if (!response.ok || data.error) {
+        console.error('API Error:', data.error || 'Unknown error')
         const errorMessage = { 
           role: 'assistant', 
           content: 'I apologize, but I\'m having trouble responding right now. Please try again in a moment.' 
@@ -179,7 +180,7 @@ export default function SerenaGPT() {
         }
       }
     } catch (error) {
-      console.error('Error:', error)
+      console.error('Network Error:', error)
       const errorMessage = { 
         role: 'assistant', 
         content: 'I apologize, but I\'m having trouble responding right now. Please try again in a moment.' 

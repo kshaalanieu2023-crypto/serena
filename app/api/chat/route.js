@@ -61,8 +61,17 @@ export async function POST(request) {
     })
   } catch (error) {
     console.error('OpenAI API error:', error)
+    
+    // Provide more specific error messages
+    if (error.message && error.message.includes('OPENAI_API_KEY')) {
+      return NextResponse.json(
+        { error: 'OpenAI API key is not configured. Please set OPENAI_API_KEY environment variable in Vercel.' },
+        { status: 500 }
+      )
+    }
+    
     return NextResponse.json(
-      { error: 'Failed to get response from AI' },
+      { error: error.message || 'Failed to get response from AI' },
       { status: 500 }
     )
   }
