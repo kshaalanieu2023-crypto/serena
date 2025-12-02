@@ -31,12 +31,6 @@ export default function SerenaGPT() {
           <p className="sidebar-title">SerenaGPT</p>
           <p className="sidebar-subtitle">Your mental health companion</p>
         </div>
-        <div className="chat-history">
-          <div className="chat-history-header">Chat History</div>
-          <div className="no-chats" style={{ padding: '16px', color: '#64748b', fontSize: '14px' }}>
-            Chat history is managed by Chatbase
-          </div>
-        </div>
       </div>
       
       <div className="chat-main">
