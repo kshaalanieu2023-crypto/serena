@@ -6,24 +6,13 @@ export default function SerenaGPT() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   useEffect(() => {
-    // Set sidebar to closed on mobile by default, open on desktop
-    const checkMobile = () => {
-      if (window.innerWidth <= 768) {
-        setSidebarOpen(false)
-      } else {
-        setSidebarOpen(true)
-      }
-    }
-    
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    
-    return () => window.removeEventListener('resize', checkMobile)
+    // Set sidebar to closed by default on all screen sizes
+    setSidebarOpen(false)
   }, [])
 
   return (
     <div className="serenagpt-page">
-      {sidebarOpen && typeof window !== 'undefined' && window.innerWidth <= 768 && (
+      {sidebarOpen && (
         <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>
       )}
       <div className={`chat-sidebar ${sidebarOpen ? 'open' : ''}`}>
@@ -47,11 +36,13 @@ export default function SerenaGPT() {
           <h2>SerenaGPT</h2>
         </div>
 
-        <div className="chat-messages-container">
+        <div className="chat-messages-container" style={{ width: '100%', maxWidth: '100%' }}>
           <iframe
             src="https://www.chatbase.co/chatbot-iframe/Gdf1-JdvGrV7XTWScbscD"
             width="100%"
             style={{ 
+              width: '100%',
+              maxWidth: '100%',
               height: '100%',
               minHeight: '500px',
               border: 'none',
