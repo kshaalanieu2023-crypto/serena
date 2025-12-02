@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server'
-import OpenAI from 'openai'
 
-const getOpenAIClient = () => {
+// Dynamic import to avoid build-time evaluation
+const getOpenAIClient = async () => {
   const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey) {
     throw new Error('OPENAI_API_KEY is not configured')
   }
+  const { default: OpenAI } = await import('openai')
   return new OpenAI({
     apiKey: apiKey,
   })
@@ -33,8 +34,8 @@ export async function POST(request) {
       )
     }
 
-    const openai = getOpenAIClient()
     const { messages } = await request.json()
+    const openai = await getOpenAIClient()
 
     // Check for crisis keywords
     const userMessage = messages[messages.length - 1]?.content?.toLowerCase() || ''
