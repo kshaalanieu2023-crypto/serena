@@ -530,6 +530,7 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
+  min-height: 0;
 }
 
 .chat-header {
@@ -569,10 +570,20 @@
 
 .chat-messages-container {
   flex: 1;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 0;
+  height: 100%;
+}
+
+.chat-messages-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  flex: 1 1 auto;
 }
 
 .welcome-message {

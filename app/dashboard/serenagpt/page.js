@@ -58,20 +58,24 @@ export default function SerenaGPT() {
           display: 'flex', 
           flexDirection: 'column',
           overflow: 'hidden',
-          position: 'relative'
+          position: 'relative',
+          minHeight: 0,
+          height: '100%'
         }}>
           <iframe
             src="https://www.chatbase.co/chatbot-iframe/Gdf1-JdvGrV7XTWScbscD"
             width="100%"
+            height="100%"
             style={{ 
-              height: '100%', 
-              minHeight: '700px',
               border: 'none',
               borderRadius: '0',
-              flex: 1
+              display: 'block',
+              flex: '1 1 auto'
             }}
             frameBorder="0"
             title="SerenaGPT Chat"
+            allow="microphone"
+            scrolling="no"
           />
         </div>
 
