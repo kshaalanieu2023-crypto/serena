@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+const getOpenAIClient = () => {
+  const apiKey = process.env.OPENAI_API_KEY
+  if (!apiKey) {
+    throw new Error('OPENAI_API_KEY is not configured')
+  }
+  return new OpenAI({
+    apiKey: apiKey,
+  })
+}
 
 const SYSTEM_PROMPT = `You are SerenaGPT, a helpful and empathetic AI assistant. Your role is to be supportive, understanding, and genuinely helpful to users while maintaining a warm, caring tone.
 
@@ -19,6 +25,15 @@ Guidelines:
 
 export async function POST(request) {
   try {
+    // Check if API key is configured
+    if (!process.env.OPENAI_API_KEY) {
+      return NextResponse.json(
+        { error: 'OpenAI API key is not configured. Please set OPENAI_API_KEY environment variable.' },
+        { status: 500 }
+      )
+    }
+
+    const openai = getOpenAIClient()
     const { messages } = await request.json()
 
     // Check for crisis keywords
