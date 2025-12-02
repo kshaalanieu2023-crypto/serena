@@ -1636,6 +1636,88 @@
     padding: 32px 20px;
   }
 
+  .article-view {
+    padding: 24px 16px;
+    max-width: 100%;
+  }
+
+  .article-content {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .article-content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+
+  .article-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .article-body h1 {
+    font-size: 1.5rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .article-body h2 {
+    font-size: 1.375rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .article-body h3 {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .article-body p {
+    margin-bottom: 12px;
+  }
+
+  .article-body ul,
+  .article-body ol {
+    margin: 12px 0;
+    padding-left: 24px;
+  }
+
+  .article-body li {
+    margin: 6px 0;
+  }
+
+  .article-body pre {
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 0.8125rem;
+    overflow-x: auto;
+  }
+
+  .article-body blockquote {
+    padding-left: 16px;
+    margin: 16px 0;
+  }
+
+  .article-body table {
+    font-size: 0.875rem;
+    margin: 16px 0;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .article-body th,
+  .article-body td {
+    padding: 8px 12px;
+  }
+
+  .article-body hr {
+    margin: 24px 0;
+  }
+
   .serenagpt-page {
     height: calc(100vh - 80px);
     padding: 0;
